@@ -38,7 +38,7 @@ fn main() {
     println!("{} {} {} = {}",primer_numero,operador,segundo_numero,resultado);
 }
 
-fn calculadora(operador:char,primer_numero:f32,segundo_numero:f32) -> f32{
+pub fn calculadora(operador:char,primer_numero:f32,segundo_numero:f32) -> f32{
     match operador {
         '+' => primer_numero + segundo_numero,
         '-' => primer_numero - segundo_numero,
@@ -47,4 +47,34 @@ fn calculadora(operador:char,primer_numero:f32,segundo_numero:f32) -> f32{
         _ => panic!("El operador no es válido")
         
     }
+}
+
+#[cfg(test)]
+
+mod tests{ 
+    use super::*; 
+    #[test]
+    fn suma(){
+        let resultado=calculadora('+',5.22,5.1);
+        assert_eq!(resultado,10.32)
+    }
+
+    #[test]
+    fn resta(){
+        let resultado=calculadora('-',5.00,2.00);
+        assert_eq!(resultado,3.00)
+    }
+
+    #[test]
+    fn multiplicacion(){
+        let resultado=calculadora('*',2.00,2.00);
+        assert_eq!(resultado,4.00)
+    }
+
+    #[test]
+    fn division(){
+        let resultado=calculadora('/',2.00,2.00);
+        assert_eq!(resultado,1.00)
+    }
+
 }
