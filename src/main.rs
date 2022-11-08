@@ -38,7 +38,7 @@ fn main() {
     println!("{} {} {} = {}",primer_numero,operador,segundo_numero,resultado);
 }
 
-pub fn calculadora(operador:char,primer_numero:f32,segundo_numero:f32) -> f32{
+fn calculadora(operador:char,primer_numero:f32,segundo_numero:f32) -> f32{
     match operador {
         '+' => primer_numero + segundo_numero,
         '-' => primer_numero - segundo_numero,
