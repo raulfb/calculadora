@@ -26,3 +26,8 @@ cargo run 2 * 2
 ```rust
 cargo run 2 / 2
 ```
+
+## Tests
+```rust
+cargo test
+```
