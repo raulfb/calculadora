@@ -77,4 +77,11 @@ mod tests{
         assert_eq!(resultado,1.00)
     }
 
+    #[test]
+    #[should_panic]
+    fn parametros_erroneos(){
+        let resultado=calculadora('/',2.00,0.00);
+        assert_eq!(resultado,0.00)
+    }
+
 }
